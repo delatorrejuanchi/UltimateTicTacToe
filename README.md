@@ -2,7 +2,7 @@
 
 TicTacToe is a classic, but as you may have discovered is yourself, it is terminally dull. There's no room for creativity or insight, since good players always tie.
 
-For this reason, a more sophisticated version was invented, which I decided to implement this variation using web technologies.
+For this reason, a more sophisticated version was invented, which I decided to implement using web technologies.
 
 ## Rules
 
