@@ -1,0 +1,89 @@
+body {
+    background: #34495e;
+    color: #ecf0f1;
+    margin: 0;
+}
+
+h1 {
+    text-align: center;
+}
+
+div {
+    transition: .3s ease-in-out;
+}
+
+.game {
+    width: 300px;
+    height: 300px;
+    margin: 0 auto;
+    font-size: 0 !important;
+}
+
+.board {
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    box-shadow: inset 0px 0px 0px 2px #ecf0f1;
+    box-sizing: border-box;
+    padding: 5px;
+}
+
+.board:hover {
+    background: #7f8c8d;
+}
+
+.next_board, .next_board > .cell {
+    box-shadow: inset 0px 0px 0px 1px #1abc9c;
+}
+
+.cell {
+    margin: 0;
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    box-shadow: inset 0px 0px 0px 1px #ecf0f1;
+    box-sizing: border-box;
+}
+
+.X-TURN > .board > .cell:hover {
+    background: red;
+}
+
+.O-TURN > .board > .cell:hover {
+    background: blue;
+}
+
+.X {
+    background: red !important;
+}
+
+.O {
+    background: blue !important;
+}
+
+.DRAW {
+    background: #ecf0f1 !important;
+}
+
+.references {
+    margin: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.references > .cell {
+    margin: 0 20px;
+}
+
+footer {
+    height: 60px;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    background: #ecf0f1;
+    color: #34495e;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
