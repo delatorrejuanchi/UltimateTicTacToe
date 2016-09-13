@@ -9,6 +9,10 @@ h1 {
     text-align: center;
 }
 
+div {
+    transition: .3s ease-in-out;
+}
+
 .game {
     width: 300px;
     height: 300px;
