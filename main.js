@@ -17,10 +17,9 @@ $('document').ready(function () {
         return this.get_cell(cell) == '-';
     }
     TicTacToe.prototype.play = function (player, cell) {
-        var x, y;
-        cell = cell - 1;
-        y = Math.floor(cell / 3);
-        x = cell % 3;
+        cell--;
+        var x = cell % 3;
+        var y = Math.floor(cell / 3);
 
         this.board[y][x] = player;
     }
@@ -151,13 +150,13 @@ $('document').ready(function () {
             game.play(current_player, board, cell);
             $(this).addClass(current_player);
             current_player = current_player == "X" ? "O" : "X";
-            
+
             $('.next_board').removeClass('next_board');
             if(!game.get_board(cell).is_won()) {
                 $('.board:nth-of-type(' + (cell) + ')').addClass('next_board');
             }
         }
-        
+
         if(game.get_board(board).is_won()) {
             var won = game.get_board(board).is_won();
             $(this).parent(".board").addClass(won);
@@ -167,23 +166,30 @@ $('document').ready(function () {
                 .removeClass("DRAW")
                 .addClass(won);
         }
-        
+
         if (game.is_won()) {
-            alert(game.is_won());
-            game = new UltimateTicTacToe();
-            $('.X').removeClass('X')
-            $('.O').removeClass('O');
-            $('.DRAW').removeClass('DRAW');
-            current_player = "X";
+            alert(game.is_won() + " wins!");
+
         }
-        
+
         if(current_player == "X") {
             $('.game').removeClass("O-TURN").addClass("X-TURN");
         } else {
             $('.game').removeClass("X-TURN").addClass("O-TURN");
 
         }
-        
+
         return true;
+    });
+
+    $("#restart").click(function (event) {
+        event.preventDefault();
+
+        game = new UltimateTicTacToe();
+        $('.X').removeClass('X')
+        $('.O').removeClass('O');
+        $('.DRAW').removeClass('DRAW');
+        $('.next_board').removeClass('next_board');
+        current_player = "X";
     });
 });

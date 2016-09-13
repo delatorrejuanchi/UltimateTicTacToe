@@ -1,15 +1,12 @@
 body {
     background: #34495e;
     color: #ecf0f1;
+    margin: 0;
 }
 
 h1 {
     margin: 40px;
     text-align: center;
-}
-
-div {
-    transition: .3s ease-in-out;
 }
 
 .game {
@@ -53,11 +50,11 @@ div {
     background: blue;
 }
 
-.X {
+.X, .referenceX {
     background: red !important;
 }
 
-.O {
+.O, .referenceO {
     background: blue !important;
 }
 
@@ -65,7 +62,7 @@ div {
     background: #ecf0f1 !important;
 }
 
-.references {
+.references, .restart {
     margin: 50px;
     display: flex;
     align-items: center;
@@ -74,6 +71,14 @@ div {
 
 .references > .cell {
     margin: 0 20px;
+}
+
+.restart > a {
+    color: inherit;
+    text-decoration: inherit;
+    border-style: solid;
+    border-color: inherit;
+    padding: 10px;
 }
 
 footer {
